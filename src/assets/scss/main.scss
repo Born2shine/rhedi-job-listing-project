@@ -285,7 +285,7 @@ body{
     header {
         .search-box {
             background: $clr-dark-blue;
-            color: #f4f6f8;
+            color: $clr-grey;
             form{
                 .filter-box {
                     border-right: 1px solid #252f3b;
@@ -293,8 +293,8 @@ body{
                         color: #879db3;
                       }
                       input {
-                        background: #19202d;
-                        color: #f4f6f8;
+                        background: $clr-dark-blue;
+                        color: $clr-grey;
                       }
                 }
             }
@@ -302,15 +302,15 @@ body{
     }
     .jobs {
         .single-job {
-            background: #19202d;
-            color: #f4f6f8;
+            background: $clr-dark-blue;
+            color: $clr-grey;
             box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
              .job-icon {
                 border: 1px solid $clr-grey-darker;
                 z-index: 2;
               }
               .job-info h3 {
-                color: #e4e4e4;
+                color: $clr-grey-dark;
               }
           }
     }
@@ -320,16 +320,16 @@ body{
         background-color: rgba(19, 19, 19, 0.6);
 
         .modal-content {
-            background: #19202d;
-            color: #f4f6f8;
+            background: $clr-dark-blue;
+            color: $clr-grey;
             .filter-box {
-                border-bottom: 1px solid #19202d;
+                border-bottom: 1px solid $clr-dark-blue;
                 input {
-                    background: #19202d;
-                    color: #f4f6f8;
+                    background: $clr-dark-blue;
+                    color: $clr-grey;
                   }
                 .filter-icon {
-                    color: #5964E0;
+                    color: $clr-violet;
                   }
               }
               .checkbox-label {

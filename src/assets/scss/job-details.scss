@@ -150,26 +150,26 @@
     .main{
          header {
             .company-info {
-                background: #19202d;
-                color: #f4f6f8;
+                background: $clr-dark-blue;
+                color: $clr-grey;
                 box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
                  .company-name-link h3 {
-                    color: #f4f6f8;
+                    color: $clr-grey;
                   }
                   .web-link a {
                     background: #222c3d;
-                    color: #f4f6f8;
-                    color: #5964E0;
+                    color: $clr-grey;
+                    color: $clr-violet;
                   }
               }
          }
          .job-details {
-            background: #19202d;
-            color: #f4f6f8;
+            background: $clr-dark-blue;
+            color: $clr-grey;
           }
          .apply-now {
-            background: #19202d;
-            color: #f4f6f8;
+            background: $clr-dark-blue;
+            color: $clr-grey;
           }
     }
 }
