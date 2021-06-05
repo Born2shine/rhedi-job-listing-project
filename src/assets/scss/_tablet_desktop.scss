@@ -1,0 +1,215 @@
+@media screen and (min-width: $breakpoint-sm){
+    .is_mobile{
+        display: none !important;
+    }
+    .is_desktop{
+        display: flex !important;
+    }
+    .main{
+        header{
+            .nav{
+                width: 95%;
+                margin: 0 auto;
+                padding: 0;
+                margin-top: 0.5rem !important;
+                h2 {
+                    font-size: 1.5rem;
+                }
+                .toggle-icon {
+                    font-size: 1rem !important;
+                    margin: 0 0.3rem;
+                  }
+            }
+            border-bottom-left-radius: 30%;
+            .search-box{
+                width: 90%;
+                bottom: -2.5rem;
+                form{
+                    grid-template-columns: 33% 33% 1fr;
+                    .filter-box{
+                        border-right: 1px solid $clr-grey-dark;
+                        margin-right: .4rem;
+                        padding: .4rem;
+                        .filter-icon{
+                            font-size: 1rem;
+                        }
+                        input {
+                            font-size: 0.8rem;
+                          }
+                    }
+                    .search-btn {
+                        margin-left: 1px;
+                        .checkbox-label {
+                            gap: 0.1rem;
+                            label {
+                                font-size: 0.65rem;
+                                margin-left: 0.3rem;
+                              }
+                          }
+                          .btn-search {
+                            font-size: 0.7rem;
+                            padding: 0.5rem;
+                          }
+                      }
+                }
+            }
+            
+        }
+        .jobs{
+            margin-top: 1rem;
+            padding: 1.2rem ;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+           align-items: center;
+            .single-job{
+                width: 95%;
+                margin: 0 auto;
+                padding: 1.2rem;
+                margin: 1rem 0;
+                .job-icon {
+                    img {
+                        width: 30px;
+                        height: 30px;
+                      }
+                }
+                .job-info {
+                    margin-top: 1.8rem;
+                    .posted {
+                        font-size: 0.7rem;
+                      }
+                    h3 {
+                    font-size: 0.9rem;
+                    }
+                    .company-name {
+                        font-size: 0.8rem;
+                      }
+                      .location {
+                        font-size: 0.7rem;
+                      }
+                  }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-md){
+    
+    .main{
+        header{
+            .nav{
+                width: 85%;
+                margin: 0 auto;
+            }
+            border-bottom-left-radius: 30%;
+            .search-box{
+                width: 80%;
+                bottom: -3rem;
+                padding: 0.1rem;
+                form{
+                    .filter-box{
+                        padding: .8rem;
+                        .filter-icon{
+                            font-size: .8rem;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .jobs{
+            width: 85%;
+            margin: 0 auto;
+            margin-top: 2rem;
+            padding: 1.2rem ;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            .single-job{
+                padding: 1.2rem;
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg){
+    
+    .main{
+        header{
+            .nav{
+                width: 82%;
+            }
+            border-bottom-left-radius: 30%;
+            .search-box{
+                bottom: -3.5rem !important;
+                form{
+                    .filter-box{
+                        .filter-icon{
+                            font-size: 1.3rem;
+                        }
+                        input{
+                            font-size: .8rem;
+                        }
+                    }
+                    .search-btn{
+                        .checkbox-label{
+                            gap: .7rem;
+                            place-items: center;
+                            label{
+                                font-size: .7rem;
+                                
+                            }
+                        }
+                        .btn-search{
+                            padding: .7rem 1.5rem;
+                            font-size: .7rem;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .jobs{
+            width: 85%;
+            margin-top: 2rem;
+            padding: 1.2rem ;
+            .single-job{
+                padding: 1.7rem;
+                margin: 1rem 0;
+                .job-icon{
+                    left: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-xl){
+    
+    .main{
+        header{
+            padding: 2rem;
+            .nav{
+                width: 78%;
+            }
+            .search-box{
+                width: 75%;
+                bottom: -3.8rem;
+            }
+            border-bottom-left-radius: 30%;
+            
+        }
+        .jobs{
+            width: 78%;
+            margin-top: 2rem;
+            padding: 1.2rem ;
+            .single-job{
+                padding: 1.7rem;
+                margin: 1rem 0;
+                .job-icon{
+                    left: 1.5rem;
+                }
+            }
+        }
+    }
+}

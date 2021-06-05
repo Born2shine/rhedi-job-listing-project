@@ -1,0 +1,188 @@
+@media screen and (min-width: $breakpoint-sm){
+    .main{
+        header{
+            .nav{
+                margin-top: 2rem;
+            }
+            .company-info{
+                margin-top: 2rem;
+                padding: 0;
+                border-radius: .2rem;
+                border-top-left-radius: 0;
+                grid-template-columns: auto repeat(2, 1fr);
+                gap: 1.5rem;
+                justify-content: initial;
+                .job-icon{
+                    position: initial;
+                    left: initial;
+                    top: initial;
+                    transform: initial;
+                    padding: 1.8rem 2.2rem;
+                    font-size: 2.2rem;
+                    border-radius: 0;
+                    display: flex;
+                    justify-content: center;
+                    border-bottom-left-radius: .2rem;
+                }
+                .company-name-link{
+                    align-self: center;
+                    h3{
+                        font-size: 1rem;
+                        margin-top: 1rem;
+                        text-align: left;
+                    }
+                    .company-link{
+                        text-align: left;
+                        line-height: 1.9;
+                        font-size: .8rem;
+                    }
+                }
+                .web-link{
+                    a{
+                        padding: 1rem 1.4rem;
+                        font-size: .6rem;
+                    }
+                }
+            }
+        }
+        .job-details{
+            margin: 2.5rem;
+            margin-top: 5rem;
+            border-radius: .2rem;
+            .info{
+                .info-header{
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    .left{
+                        .time-role{
+                           font-size: .8rem;
+                        }
+                        h3{
+                            font-size: 1rem;
+                        }
+                        .location{
+                            font-size: .7rem;
+                            width: 80%;
+                        }
+                    }
+                    .right{
+                        .btn-apply{
+                            margin: 0;
+                            padding: .8rem .6rem;
+                            font-size: .8rem;
+                            border-radius: .2rem;
+                        }
+                    }
+                }
+                .description{
+                    font-size: .8rem;
+                    margin-top: 1rem;
+                }
+                .info-link{
+                    font-size: .8rem;
+                }
+                .has-list{
+                    font-size: .8rem;
+                   }
+            }
+            .how-to-apply{
+                font-size: .8rem;
+                border-radius: .2rem;
+                padding: 1rem 2rem;
+                margin-top: 1rem;
+            }
+            
+        }
+
+        .apply-now{
+            padding: 1.5rem 2.6rem;
+            margin: 0;
+            display: grid;
+            grid-template-columns: auto 150px;
+            gap: 1.5rem;
+            .job-role{
+                display: flex;
+                flex-direction: column;
+                h3{
+                    font-size: 1rem;
+                    line-height: 1.7;
+                }
+                .company-name{
+                    font-size: .8rem;
+                }
+            }
+            a{
+                display: block;
+                padding: .7rem .2rem;
+                border-radius: .1rem;
+                font-size: .8rem;
+            }
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width: $breakpoint-md){
+    .main{
+        header{
+            .nav{
+                margin-top: 1rem;
+            }
+           .company-info{
+               width: 80%;
+           }
+        }
+        .job-details{
+            margin: 6rem 5.5rem;
+            .info{
+                .info-header{
+                    grid-template-columns: auto 120px;
+                }
+            }
+        }
+        .apply-now{
+            padding: 1.5rem 5.6rem;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg){
+    .main{
+        header{
+           .company-info{
+               width: 70%;
+               .web-link {
+                a {
+                    font-size: 0.8rem;
+                  }
+               }
+           }
+        }
+        .job-details{
+            margin: 6rem 10.5rem;
+        }
+        .apply-now{
+            padding: 1.5rem 10.6rem;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-xl){
+    .main{
+        header{
+            .nav{
+                margin-top: .2rem;
+            }
+           .company-info{
+               width: 65%;
+           }
+        }
+        .job-details{
+            margin: 6rem 15.5rem;
+        }
+        .apply-now{
+            padding: 1.5rem 15.6rem;
+        }
+    }
+}

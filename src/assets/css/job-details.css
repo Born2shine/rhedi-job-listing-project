@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap");
+.p-text, .main .job-details .info .description, .main .job-details .info .has-list, .main .how-to-apply {
+  color: #6e8098;
+  letter-spacing: .1px;
+  line-height: 1.9;
+}
+
+.btn, .btn-search, .btn-load {
+  font-family: inherit;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: .2rem;
+  background: #4857f5;
+  color: #ffffff;
+  font-size: .7rem;
+}
+
+.btn-search {
+  padding: .5rem;
+  font-size: .6rem;
+}
+
+.main header {
+  min-height: 130px;
+  position: relative;
+}
+
+.main header .company-info {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  background: #ffffff;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  padding: 4rem;
+  border-radius: .6rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main header .company-info .job-icon {
+  position: absolute;
+  left: 50%;
+  top: -1.5rem;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  background: #ee43b5;
+  color: #ffffff;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.main header .company-info .job-icon img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main header .company-info .company-name-link h3 {
+  font-size: 1.4rem;
+  color: #19202d;
+  text-align: center;
+}
+
+.main header .company-info .company-name-link .company-link {
+  line-height: 2.8;
+  text-align: center;
+  color: #6e8098;
+}
+
+.main header .company-info .web-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.main header .company-info .web-link a {
+  padding: 1.1rem 2rem;
+  font-size: 1rem;
+  background: #f4f6f8;
+  color: #4857f5;
+  font-weight: bold;
+  border-radius: .4rem;
+  -webkit-box-shadow: 1px 1px 3x 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 3x 3px rgba(0, 0, 0, 0.1);
+}
+
+.main .job-details {
+  position: relative;
+  margin: 2rem;
+  margin-top: 15rem;
+  border-radius: .4rem;
+  padding: 1.2rem;
+  background: #ffffff;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.main .job-details .info {
+  margin-top: 1rem;
+}
+
+.main .job-details .info .info-header .left .time-role {
+  color: #6e8098;
+}
+
+.main .job-details .info .info-header .left h3 {
+  line-height: 2.2;
+  font-size: 1.2rem;
+}
+
+.main .job-details .info .info-header .left .location {
+  color: #4857f5;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.main .job-details .info .info-header .right .btn-apply {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  margin: 2rem 0;
+  border-radius: .4rem;
+}
+
+.main .job-details .info .info-link {
+  display: block;
+  text-decoration: initial;
+  color: #4857f5;
+  line-height: 4;
+}
+
+.main .job-details .info .has-list {
+  padding: .5rem 2rem;
+}
+
+.main .how-to-apply {
+  background: url("../mobile/bg-pattern-detail-footer.svg") center/cover no-repeat;
+  border-radius: .4rem;
+  padding: 1rem 2rem;
+  color: #ffffff;
+}
+
+.main .how-to-apply .apply-link {
+  display: block;
+  line-height: 1.1;
+  margin: 1rem 0;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.main .apply-now {
+  background: #ffffff;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.main .apply-now .apply-btn a {
+  background: #4857f5;
+  color: #ffffff;
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: .4rem;
+  text-align: center;
+}
+
+.dark-mode .main header .company-info {
+  background: #19202d;
+  color: #f4f6f8;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .main header .company-info .company-name-link h3 {
+  color: #f4f6f8;
+}
+
+.dark-mode .main header .company-info .web-link a {
+  background: #222c3d;
+  color: #f4f6f8;
+  color: #5964E0;
+}
+
+.dark-mode .main .job-details {
+  background: #19202d;
+  color: #f4f6f8;
+}
+
+.dark-mode .main .apply-now {
+  background: #19202d;
+  color: #f4f6f8;
+}
+
+@media screen and (min-width: 540px) {
+  .main header .nav {
+    margin-top: 2rem;
+  }
+  .main header .company-info {
+    margin-top: 2rem;
+    padding: 0;
+    border-radius: .2rem;
+    border-top-left-radius: 0;
+    -ms-grid-columns: auto (1fr)[2];
+        grid-template-columns: auto repeat(2, 1fr);
+    gap: 1.5rem;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+  .main header .company-info .job-icon {
+    position: initial;
+    left: initial;
+    top: initial;
+    -webkit-transform: initial;
+            transform: initial;
+    padding: 1.8rem 2.2rem;
+    font-size: 2.2rem;
+    border-radius: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-bottom-left-radius: .2rem;
+  }
+  .main header .company-info .company-name-link {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .main header .company-info .company-name-link h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+  }
+  .main header .company-info .company-name-link .company-link {
+    text-align: left;
+    line-height: 1.9;
+    font-size: .8rem;
+  }
+  .main header .company-info .web-link a {
+    padding: 1rem 1.4rem;
+    font-size: .6rem;
+  }
+  .main .job-details {
+    margin: 2.5rem;
+    margin-top: 5rem;
+    border-radius: .2rem;
+  }
+  .main .job-details .info .info-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+  .main .job-details .info .info-header .left .time-role {
+    font-size: .8rem;
+  }
+  .main .job-details .info .info-header .left h3 {
+    font-size: 1rem;
+  }
+  .main .job-details .info .info-header .left .location {
+    font-size: .7rem;
+    width: 80%;
+  }
+  .main .job-details .info .info-header .right .btn-apply {
+    margin: 0;
+    padding: .8rem .6rem;
+    font-size: .8rem;
+    border-radius: .2rem;
+  }
+  .main .job-details .info .description {
+    font-size: .8rem;
+    margin-top: 1rem;
+  }
+  .main .job-details .info .info-link {
+    font-size: .8rem;
+  }
+  .main .job-details .info .has-list {
+    font-size: .8rem;
+  }
+  .main .job-details .how-to-apply {
+    font-size: .8rem;
+    border-radius: .2rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+  }
+  .main .apply-now {
+    padding: 1.5rem 2.6rem;
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 150px;
+        grid-template-columns: auto 150px;
+    gap: 1.5rem;
+  }
+  .main .apply-now .job-role {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .apply-now .job-role h3 {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .main .apply-now .job-role .company-name {
+    font-size: .8rem;
+  }
+  .main .apply-now a {
+    display: block;
+    padding: .7rem .2rem;
+    border-radius: .1rem;
+    font-size: .8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main header .nav {
+    margin-top: 1rem;
+  }
+  .main header .company-info {
+    width: 80%;
+  }
+  .main .job-details {
+    margin: 6rem 5.5rem;
+  }
+  .main .job-details .info .info-header {
+    -ms-grid-columns: auto 120px;
+        grid-template-columns: auto 120px;
+  }
+  .main .apply-now {
+    padding: 1.5rem 5.6rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main header .company-info {
+    width: 70%;
+  }
+  .main header .company-info .web-link a {
+    font-size: 0.8rem;
+  }
+  .main .job-details {
+    margin: 6rem 10.5rem;
+  }
+  .main .apply-now {
+    padding: 1.5rem 10.6rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main header .nav {
+    margin-top: .2rem;
+  }
+  .main header .company-info {
+    width: 65%;
+  }
+  .main .job-details {
+    margin: 6rem 15.5rem;
+  }
+  .main .apply-now {
+    padding: 1.5rem 15.6rem;
+  }
+}

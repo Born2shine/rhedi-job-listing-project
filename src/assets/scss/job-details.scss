@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+@import 'config';
+@import 'buttons';
+
+.main{
+    header{
+        min-height: 130px;
+        position: relative;
+        .company-info{
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 3.5rem;
+            background: $clr-white;
+            box-shadow: 1px 1px 5px 2px rgba(0,0,0,.1);
+            padding: 4rem;
+            border-radius: .6rem;
+            display: grid;
+            justify-content: center;
+            .job-icon{
+                position: absolute;
+                left: 50%;
+                top: -1.5rem;
+                transform: translate(-50%);
+                background: $clr-purple;
+                color: $clr-white;
+                padding: 0.4rem 0.5rem;
+                border-radius: 0.5rem;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: cover;
+                  }
+            }
+            .company-name-link{
+                h3{
+                    font-size: 1.4rem;
+                    color: $clr-dark-blue;
+                    text-align: center;
+                }
+                .company-link{
+                    line-height: 2.8;
+                    text-align: center;
+                    color: $clr-grey-darker;
+                }
+            }
+            .web-link{
+                text-align: center;
+                margin-top: 2rem;
+                a{
+                    padding: 1.1rem 2rem;
+                    font-size: 1rem;
+                    background: $clr-grey;
+                    color: $clr-violet;
+                    font-weight: bold;
+                    border-radius: .4rem;
+                    box-shadow: 1px 1px 3x 3px rgba(0,0,0,.1);
+                }
+            }
+        }
+    }
+    .job-details{
+       position: relative;
+    //    width: 90%;
+       margin: 2rem;
+       margin-top: 15rem;
+       border-radius: .4rem;
+       padding: 1.2rem;
+       background: $clr-white;
+       box-shadow: 1px 1px 5px 2px rgba(0,0,0,.1);
+       .info{
+           margin-top: 1rem;
+           .info-header{
+           .left{
+            .time-role{
+                color: $clr-grey-darker;
+            }
+            h3{
+                line-height: 2.2;
+                font-size: 1.2rem;
+            }
+            .location{
+                color: $clr-violet;
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+           }
+            .right{
+                .btn-apply{
+                    display: block;
+                    width: 100%;
+                    padding: 1rem;
+                    text-align: center;
+                    font-size: 1rem;
+                    margin: 2rem 0;
+                    border-radius: .4rem;
+                }
+            }
+           }
+           .description{
+            @extend .p-text;
+           }
+           .info-link{
+            display: block;
+            text-decoration: initial;
+            color: $clr-violet;
+            line-height: 4;
+        }
+           .has-list{
+            @extend .p-text;
+            padding: .5rem 2rem;
+           }
+       }
+    }
+    .how-to-apply{
+        @extend .p-text;
+        background: url("../mobile/bg-pattern-detail-footer.svg") center/cover no-repeat;
+        border-radius: .4rem;
+        padding: 1rem 2rem;
+        color: $clr-white;
+        .apply-link{
+            display: block;
+            line-height: 1.1;
+            margin: 1rem 0;
+            color: $clr-white;
+            text-decoration: underline;
+        }
+    }
+    .apply-now{
+        background: $clr-white;
+        box-shadow: 1px 1px 5px 2px rgba(0,0,0,.1);
+        padding: 2rem;
+        margin: 2rem;
+        .apply-btn{
+            a{
+                background: $clr-violet;
+                color: $clr-white;
+                display: block;
+                width: 100%;
+                padding: 1rem 2rem;
+                border-radius: .4rem;
+                text-align: center;
+            }
+        }
+       
+    }
+}
+
+.dark-mode {
+    .main{
+         header {
+            .company-info {
+                background: #19202d;
+                color: #f4f6f8;
+                box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+                 .company-name-link h3 {
+                    color: #f4f6f8;
+                  }
+                  .web-link a {
+                    background: #222c3d;
+                    color: #f4f6f8;
+                    color: #5964E0;
+                  }
+              }
+         }
+         .job-details {
+            background: #19202d;
+            color: #f4f6f8;
+          }
+         .apply-now {
+            background: #19202d;
+            color: #f4f6f8;
+          }
+    }
+}
+
+@import 'tablet_desktop_job_details'
