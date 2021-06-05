@@ -94,9 +94,8 @@ body{
     left: 50%;
     justify-content: center;
     font-size: 2rem;
-    color: #6e8098;
     animation: rotation 0.6s infinite linear;
-    color: #5964E0;
+    color: $clr-violet;
   }
   @keyframes rotation {
     from {
@@ -276,12 +275,13 @@ body{
 }
 
 .dark-mode {
+    background: $clr-midnight;
     .loading {
         color: $clr-grey;
       }
     .main{
-    background: #121721;
-    color: #6e8098;
+    background: $clr-midnight;
+    color: $clr-grey-darker;
     header {
         .search-box {
             background: $clr-dark-blue;
@@ -306,7 +306,7 @@ body{
             color: #f4f6f8;
             box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
              .job-icon {
-                border: 1px solid #6e8098;
+                border: 1px solid $clr-grey-darker;
                 z-index: 2;
               }
               .job-info h3 {
@@ -334,12 +334,12 @@ body{
               }
               .checkbox-label {
                 label {
-                    color: #6e8098;
+                    color: $clr-grey-darker;
                   }
               }
         }
         .close-modal {
-            color: #6e8098;
+            color: $clr-grey-darker;
           }
     }
     }
