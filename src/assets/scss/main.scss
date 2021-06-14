@@ -29,10 +29,12 @@ body{
     position: relative;
 }
 .error-page {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 10rem;
+    h1{
+        font-size: 1.5rem;
+        color: #e66161;
+    }
   }
 .search-btn-modal{
     display: none;
