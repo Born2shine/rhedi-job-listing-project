@@ -1,19 +1,17 @@
-const fetchJobHandler = () => {
-    const url = "https://remoteok.io/api"
-    fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-        data.shift();
-        return data;
-        // setLoading(false)
-        // setJobs(data)
-    })
-    .catch((error) => console.log(error))
-}
+
 
 const findJob = (jobs, slug) => jobs.find((job) => job.slug === slug)
 
+const chunkJob = (jobs) => {
+    const itemsPerPage = 1;
+    const pages = Math.ceil(jobs.length / itemsPerPage)
+    const newJobs = Array.from({ length: pages }, (_, index) => {
+        const start = index * itemsPerPage
+        // console.log(start)
+        return jobs.slice(start, start + itemsPerPage)
+    })
+    // console.log(newJobs)
+    return newJobs
+}
 
-
-export { findJob, fetchJobHandler }
-// export default FetchJobs
+export { findJob, chunkJob }

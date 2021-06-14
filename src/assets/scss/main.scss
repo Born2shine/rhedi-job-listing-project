@@ -75,6 +75,7 @@ body{
                     outline: none;
                 }
             }
+           
         }
         .checkbox-label{
             display: inline-block !important;
@@ -281,6 +282,7 @@ body{
             background: $clr-violet;
             color: $clr-white;
             font-size: 1rem;
+            cursor: pointer;
         }
     }
 }

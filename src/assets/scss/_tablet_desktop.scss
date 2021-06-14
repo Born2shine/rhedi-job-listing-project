@@ -155,14 +155,16 @@
                         .checkbox-label{
                             gap: .7rem;
                             place-items: center;
+                            
                             label{
                                 font-size: .7rem;
-                                
+                                                                
                             }
                         }
                         .btn-search{
                             padding: .7rem 1.5rem;
                             font-size: .7rem;
+                            cursor: pointer;
                         }
                     }
                 }

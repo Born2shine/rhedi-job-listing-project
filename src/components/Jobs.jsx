@@ -5,8 +5,8 @@ import { Link } from "react-router-dom"
 import Moment from "react-moment";
 import useFetchJobs  from "../hooks/useFetchJobs";
 import Loader from './Loader';
-// import LoadMoreJobs from './LoadMoreJobs';
 import { useGlobalContext } from '../provider/context';
+import { chunkJob } from '../helpers/handlers';
 
 
 const Jobs = () => {
@@ -14,27 +14,21 @@ const Jobs = () => {
     const {jobs: Jobs, filter, getJobs, filtered } = useGlobalContext()
     const [currentJobs, setCurrentJobs] = useState([])
     const [searching, setSearching] = useState(false)
-  
-   
-    // const LIMIT = 15;
-    // const [showMore, setShowMore] = useState(true);
-    // const [list, setList] = useState(slice(currentJobs, 0, LIMIT));
-    // const [index,setIndex] = useState(LIMIT);
-    // const LENGTH = currentJobs.length;
+    const [page, setPage] = useState(0)
     
-
-    // const loadMore = () =>{
-    //         const newIndex = index + LIMIT;
-    //         const newShowMore = newIndex < (LENGTH - 1);
-    //         const newList = concat(list, slice(currentJobs, index, newIndex));
-    //         setIndex(newIndex);
-    //         setList(newList);
-    //         setShowMore(newShowMore); 
-    // }
-
+    const loadMoreJobs = () => {
+        setPage((page) => {
+            return page + 1
+        })
+       
+    }
     useEffect(() => {
         if(Jobs){
-            setCurrentJobs(Jobs)
+            if (Jobs.length === 0) return
+            const newList = chunkJob(Jobs)[page]
+            if(newList){
+                setCurrentJobs(currentJobs.concat(newList))
+            }          
         }
         if(filtered){
             setSearching(true)
@@ -44,7 +38,8 @@ const Jobs = () => {
             setSearching(false)
         }, 1000);
         clearTimeout()
-    }, [Jobs, filter, filtered, getJobs])
+        console.log(chunkJob(Jobs).length)
+    }, [Jobs, filter, page])
 
     if(currentJobs.length === 0 && !isLoading){
         return (
@@ -100,8 +95,11 @@ const Jobs = () => {
             })
         }
       </section>
-      {
-        // showMore && <LoadMoreJobs loadMore={loadMore}/>
+        {
+            (chunkJob(Jobs)[page]) && !filtered ?
+        !isLoading &&  (<div onClick={loadMoreJobs} className="load-more">
+                        <button className="btn-load">Load More</button>
+                        </div>) : ''
         }
         </>
     )

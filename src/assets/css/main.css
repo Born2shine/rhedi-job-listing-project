@@ -402,6 +402,7 @@ body {
   background: #4857f5;
   color: #ffffff;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .is_desktop {
@@ -645,6 +646,7 @@ body {
   .main header .search-box form .search-btn .btn-search {
     padding: .7rem 1.5rem;
     font-size: .7rem;
+    cursor: pointer;
   }
   .main .jobs {
     width: 85%;

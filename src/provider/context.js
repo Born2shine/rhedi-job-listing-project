@@ -25,29 +25,26 @@ const ToggleDarkMode = () => {
         document.body.classList.add('dark-mode');
         setDarkMode(true)
     }
-    // const colorScheme = matchMedia('(prefers-color-scheme: dark)');
-    // console.log(colorScheme);
-
-    // const setColorMode = () => {
-    //     if (colorScheme.matches) {
-    //         document.body.classList.add('dark-mode');
-    //       } else {
-    //         document.body.classList.remove('dark-mode');
-    //       }
-    //   }
-    //   setColorMode();
-    //   colorScheme.onchange = setColorMode;
 }
-
-// const hasDelimiter = (data) =>  data.includes(',') ? data.split(',') : data;
 
 const getJobs = (data) => {
     let {byTitle, byLocation} = data
-    const filteredJobs = jobs.filter((job) => job.location === byLocation)
+    const filteredJobs = jobs.filter((job) => job.location.toLowerCase() === byLocation.toLowerCase())
     if(byTitle){
-        const found = filteredJobs.filter((job) => job.tags.includes(byTitle));
-        return found
+        const titles = byTitle.split(',');
+        const newJobs = [];
+        let sortedJobs
+        titles.forEach(title => {
+            const found = filteredJobs.filter((job) => {
+                return job.tags.includes(title)
+            });
+            newJobs.push(...found);
+            sortedJobs = [...new Set(newJobs)]
+        })
+        return sortedJobs;
+        
     }
+    
     return filteredJobs
   }
 
