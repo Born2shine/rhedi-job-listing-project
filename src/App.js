@@ -4,11 +4,9 @@ import './assets/css/job-details.css'
 import Home from "./components/Home"
 import JobDetails from "./components/JobDetails"
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import { useGlobalContext } from "./provider/context";
 import Error from "./components/Error";
 
 function App() {
-  const { jobs } = useGlobalContext();
   return (
       <Router>
         <Switch>

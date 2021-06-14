@@ -10,6 +10,20 @@
 a{
     text-decoration: none;
 }
+.empty-search{
+    padding: 2rem;
+    margin: 2rem;
+    margin-top: 6rem;
+    text-align: center;
+    color: rgba(241, 47, 47, 0.945);
+    h2{
+        font-weight: 500;
+    }
+    .icon{
+        font-size: 1rem;
+        line-height: 3rem;
+    }
+}
 body{
     font-family: 'Kumbh Sans', sans-serif;
     position: relative;

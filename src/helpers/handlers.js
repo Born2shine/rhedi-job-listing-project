@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-
 const fetchJobHandler = () => {
     const url = "https://remoteok.io/api"
     fetch(url)

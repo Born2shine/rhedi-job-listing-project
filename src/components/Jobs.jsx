@@ -1,44 +1,67 @@
 import React, {useState, useEffect } from 'react'
-import { slice, concat } from "lodash";
+// import { slice, concat } from "lodash";
 
 import { Link } from "react-router-dom"
 import Moment from "react-moment";
 import useFetchJobs  from "../hooks/useFetchJobs";
 import Loader from './Loader';
-import LoadMoreJobs from './LoadMoreJobs';
-import useFilterData from '../hooks/useFilterData';
+// import LoadMoreJobs from './LoadMoreJobs';
+import { useGlobalContext } from '../provider/context';
 
 
 const Jobs = () => {
-    const [fetchedJobs, setFetchedJobs] = useState([])
-    const LIMIT = 15;
-    const {jobs: Jobs, isLoading } = useFetchJobs();
-    const [showMore, setShowMore] = useState(true);
-    const [list, setList] = useState(slice(Jobs, 0, LIMIT));
-    const [index,setIndex] = useState(LIMIT);
-    const LENGTH = Jobs.length;
+    const { isLoading } = useFetchJobs();    
+    const {jobs: Jobs, filter, getJobs, filtered } = useGlobalContext()
+    const [currentJobs, setCurrentJobs] = useState([])
+    const [searching, setSearching] = useState(false)
+  
+   
+    // const LIMIT = 15;
+    // const [showMore, setShowMore] = useState(true);
+    // const [list, setList] = useState(slice(currentJobs, 0, LIMIT));
+    // const [index,setIndex] = useState(LIMIT);
+    // const LENGTH = currentJobs.length;
     
 
-    const loadMore = () =>{
-            const newIndex = index + LIMIT;
-            const newShowMore = newIndex < (LENGTH - 1);
-            const newList = concat(list, slice(Jobs, index, newIndex));
-            setIndex(newIndex);
-            setList(newList);
-            setShowMore(newShowMore); 
-    }
+    // const loadMore = () =>{
+    //         const newIndex = index + LIMIT;
+    //         const newShowMore = newIndex < (LENGTH - 1);
+    //         const newList = concat(list, slice(currentJobs, index, newIndex));
+    //         setIndex(newIndex);
+    //         setList(newList);
+    //         setShowMore(newShowMore); 
+    // }
+
     useEffect(() => {
-        if(fetchedJobs){
-            loadMore()
+        if(Jobs){
+            setCurrentJobs(Jobs)
         }
-    }, [Jobs])
-    
+        if(filtered){
+            setSearching(true)
+            setCurrentJobs(getJobs(filter))
+        }
+        setTimeout(() => {
+            setSearching(false)
+        }, 1000);
+        clearTimeout()
+    }, [Jobs, filter, filtered, getJobs])
+
+    if(currentJobs.length === 0 && !isLoading){
+        return (
+            <div className="empty-search">
+                <p className="icon">
+                <img width="70px" src="https://image.flaticon.com/icons/png/512/3077/3077325.png" alt="" />
+                </p>
+                <h2>Oops! No Job Found</h2>
+            </div>
+        )
+    }
     return (
         <>
         <section className="jobs">
             {isLoading && ( <Loader/> )}
         {
-            list.map((job) => {
+          searching || currentJobs.length === 0 ? ( <Loader/> ) :  currentJobs.map((job) => {
                 const { slug, date, position, company, tags, logo } = job;
                 return (
                     
@@ -68,7 +91,8 @@ const Jobs = () => {
                                             return newTag.split(",")[3]
                                         }
                                         
-                                    })}</div>
+                                    })}
+                                </div>
                             </div>
                         </Link>
                     </div>
@@ -77,7 +101,7 @@ const Jobs = () => {
         }
       </section>
       {
-        showMore && <LoadMoreJobs loadMore={loadMore}/>
+        // showMore && <LoadMoreJobs loadMore={loadMore}/>
         }
         </>
     )

@@ -4,9 +4,17 @@ import useJobsData from "../hooks/useFetchJobs";
 const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
-const {jobs, isLoading } = useJobsData()
+const { jobs } = useJobsData();
+const { isLoading } = useJobsData()
 const elementRef = useRef(null)
 const [darkMode, setDarkMode] = useState(false)
+const [filter, setFilter] = useState({});
+const [filtered, setFiltered] = useState(false)
+const [inputData, setInputData] = useState({
+    byTitle: '',
+    byLocation: '',
+    isFulltime: false
+})
 
 const ToggleDarkMode = () => {
     
@@ -31,6 +39,35 @@ const ToggleDarkMode = () => {
     //   colorScheme.onchange = setColorMode;
 }
 
+// const hasDelimiter = (data) =>  data.includes(',') ? data.split(',') : data;
+
+const getJobs = (data) => {
+    let {byTitle, byLocation} = data
+    const filteredJobs = jobs.filter((job) => job.location === byLocation)
+    if(byTitle){
+        const found = filteredJobs.filter((job) => job.tags.includes(byTitle));
+        return found
+    }
+    return filteredJobs
+  }
+
+const filterJobsHandler = (e, data) => {
+    e.preventDefault()
+    setFiltered(true)
+    setFilter(data)
+  }
+
+const onInputChange = (e) => {
+    let {name, value} = e.target
+    if(name === 'isFulltime'){
+        value = e.target.checked
+    }
+    setFiltered(false)
+    setInputData(()=>{
+        return {...inputData, [name] : value}
+    })
+}
+
 const toggleModal = () => {
     const modalElement = elementRef.current
     if(modalElement.classList.contains('showModal')){
@@ -39,15 +76,27 @@ const toggleModal = () => {
         modalElement.classList.add("showModal")
     }
 }
+
+const closeModal = () => {
+    const modalElement = elementRef.current
+    modalElement.classList.remove("showModal")
+}
     return (
         <AppContext.Provider
         value={{
-            jobs,
             isLoading,
             elementRef,
             darkMode,
+            inputData,
+            filter,
+            jobs,
+            filtered,
             toggleModal,
-            ToggleDarkMode
+            closeModal,
+            ToggleDarkMode,
+            onInputChange,
+            getJobs,
+            filterJobsHandler
         }}
         >
             {children}

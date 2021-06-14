@@ -1,15 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Header from "./Header"
 import Jobs from "./Jobs"
 import Modal from "./Modal"
 import { useGlobalContext } from "../provider/context"
-import useFilterData from '../hooks/useFilterData';
-import useJobsData from '../hooks/useFetchJobs'
 
 const Home = () => {
-    const { toggleModal } = useGlobalContext();
-    const { filterData, filterDataHandler} = useFilterData()
-    const { filterJobsHandler } = useJobsData();
+    const { toggleModal, inputData, onInputChange, filterJobsHandler, filtered } = useGlobalContext();
+    
+    useEffect(() => {
+        // filtered && toggleModal()
+    }, [filtered])
     return (
         <main className="main">
             <Header> 
@@ -21,8 +21,8 @@ const Home = () => {
                         </span>
                         <input type="text" placeholder="Filter by title..." 
                         name="byTitle"
-                        value={filterData.byTitle}
-                        onChange={(e) => filterDataHandler(e)}
+                        value={inputData.byTitle}
+                        onChange={(e) => onInputChange(e)}
                         />
                 </div>
                 <div onClick={toggleModal} className="filter-box filter-fa is_mobile" id="toggle-filter">
@@ -35,20 +35,20 @@ const Home = () => {
                     </span>
                     <input type="text" placeholder="filter by location..."
                     name="byLocation"
-                    value={filterData.byLocation}
-                    onChange={(e) => filterDataHandler(e)}
+                    value={inputData.byLocation}
+                    onChange={(e) => onInputChange(e)}
                     />
                 </div>
                 <div className="search-btn">
                     <div className="checkbox-label is_desktop">
                         <input type="checkbox"
                         name="isFulltime"
-                        value={filterData.isFulltime}
-                        onChange={(e) => filterDataHandler(e)}
+                        value={inputData.isFulltime}
+                        onChange={(e) => onInputChange(e)}
                         />
                         <label htmlFor=""> Full Time Only</label>
                     </div>
-                    <button className="btn-search" type="submit" onClick={(e) => filterJobsHandler(e)}>
+                    <button className="btn-search" type="submit" onClick={(e) => filterJobsHandler(e, inputData)}>
                         <i className="fas fa-search is_mobile"></i>
                         <span className="is_desktop"> Search </span>
                     </button>
