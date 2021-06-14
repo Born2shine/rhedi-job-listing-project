@@ -7,7 +7,7 @@ const useJobsData = () => {
 
   useEffect(() => {
     try {
-      fetch(`https://raw.githubusercontent.com/ajinkabeer/JSONServerRediSchool/master/jobs.json`)
+      fetch(`https://raw.githubusercontent.com/Born2shine/JsonServerForJobs/main/jobs.json`)
         .then((res) => res.json())
         .then((data) => {
           data.shift();
