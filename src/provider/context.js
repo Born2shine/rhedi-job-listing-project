@@ -36,6 +36,7 @@ const getJobs = (data) => {
         let sortedJobs
         titles.forEach(title => {
             const found = filteredJobs.filter((job) => {
+                title = title.toLowerCase();
                 return job.tags.includes(title)
             });
             newJobs.push(...found);
